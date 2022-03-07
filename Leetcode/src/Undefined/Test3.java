@@ -2,6 +2,7 @@ package Undefined;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -38,4 +39,19 @@ public class Test3 {
         String s = "bbbbb";
         System.out.println(lengthOfLongestSubstring(s));
     }
+
+    @Test
+    public void test1(){
+        String s = "hello";
+        System.out.println(reverseWord(s));
+    }
+
+    public String reverseWord(String s){
+        char[] chars = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(int i = chars.length-1; i >= 0; i--)
+            sb.append(chars[i]);
+        return sb.toString();
+    }
+
 }
