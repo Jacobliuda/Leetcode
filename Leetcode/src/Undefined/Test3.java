@@ -5,7 +5,10 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.HashMap;
 
-/**
+/**无重复字符的最长子串
+ *
+ * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度
+ *
  * @author Jacob
  * @creator 2022/3/2-17:16
  */
