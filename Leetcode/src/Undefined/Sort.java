@@ -33,11 +33,41 @@ public class Sort {
         quickSort(nums, i + 1, end);
     }
 
+    public void quickSort2(int[] nums, int start, int end){
+        if(start >= end)
+            return;
+        int base = nums[start];
+        int i = start, j = end;
+        while(i < j){
+            while(i < j && nums[j] >= base)
+                j--;
+            while(i < j && nums[i] <= base)
+                i++;
+            if(i < j){
+                int tmp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = tmp;
+            }
+        }
+
+        nums[start] = nums[i];
+        nums[i] = base;
+
+        quickSort2(nums, start, i - 1);
+        quickSort2(nums, i + 1, end);
+    }
+
+
+
+
+
+
+
     @Test
     public void test(){
 
         int[] nums = new int[]{78, 12, 33, 1, 898, 32, 100};
-        quickSort(nums, 0, 6);
+        quickSort2(nums, 0, 6);
         for (int num : nums) {
             System.out.println(num);
 
