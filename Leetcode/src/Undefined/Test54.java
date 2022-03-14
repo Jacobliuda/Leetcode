@@ -27,8 +27,8 @@ public class Test54 {
                 }
             }else if(dr==1){
                 res.add(matrix[i++][j]);
+                i--;
                 if(i > rowEnd){
-                    i--;
                     dr=2;
                     rowEnd--;
                     j--;
