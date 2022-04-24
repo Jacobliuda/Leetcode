@@ -53,9 +53,9 @@ public class BagProblem {
 
     @Test
     public void test(){
-        int[] volume = new int[]{2,3,4,5};
-        int[] values = new int[]{3,4,5,6};
-        int target = 8;
+        int[] volume = new int[]{5,1,4,3};
+        int[] values = new int[]{40,10,25,30};
+        int target = 10;
         solve(volume, values, target);
     }
 }
