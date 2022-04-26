@@ -17,7 +17,6 @@ public class Test215 {
         for (int i = 1; i < k; i++){
             swap(nums, 0, --heapSize);
             maxHeapify(nums, 0, heapSize);
-
         }
         return nums[0];
     }
@@ -53,7 +52,7 @@ public class Test215 {
                 3,2,1,5,6,4
         };
 
-        int kthLargest = findKthLargest(nums, 3);
+        int kthLargest = findKthLargest(nums, 2);
         System.out.println(kthLargest);
     }
 }
