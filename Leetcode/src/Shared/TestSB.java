@@ -1,4 +1,4 @@
-package Undefined;
+package Shared;
 
 /**
  * @author Jacob
