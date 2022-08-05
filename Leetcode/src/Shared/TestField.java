@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * @author Jacob
  * @creator 2022/5/15-21:16
- * @description
+ * @description This java file is used for test functions or any thing else the code not familiar with
  */
 public class TestField {
     @Test
@@ -176,6 +176,18 @@ public class TestField {
             }
         });
     }
+
+
+    // 测试 ArrayList 的扩容机制
+    @Test
+    public void test10(){
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+
+    }
+
+
 
 
 }

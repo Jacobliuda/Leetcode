@@ -29,7 +29,7 @@ public class Test300 {
 
     @Test
     public void test(){
-        int[] nums = new int[]{0,1,0,3,2,3};
+        int[] nums = new int[]{10,9,2,5,6,3,7,101,18};
 //        int i = lengthOfLIS(nums);
 //        System.out.println(i);
         ArrayList<Integer> integers = new ArrayList<>();
@@ -40,7 +40,7 @@ public class Test300 {
         integers.add(8);
         integers.add(10);
         integers.add(12);
-        System.out.println(Collections.binarySearch(integers, 14));
+        System.out.println(Collections.binarySearch(integers, 0));
 
 
     }
