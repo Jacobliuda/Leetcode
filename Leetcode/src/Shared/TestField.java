@@ -4,6 +4,8 @@ import org.junit.Test;
 import sun.reflect.generics.tree.Tree;
 
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * @author Jacob
@@ -135,7 +137,7 @@ public class TestField {
         list.add(3);
         list.add(2);
         list.add(1);
-        list.add(0,1);
+        list.add(0, 1);
         list.remove(1);
         for (Object o : list) {
             System.out.println(o);
@@ -160,7 +162,7 @@ public class TestField {
     }
 
     @Test
-    public void test9(){
+    public void test9() {
         HashMap<Integer, Integer> map = new HashMap<>();
         Hashtable<Integer, Integer> table = new Hashtable<>();
         map.put(null, 1);
@@ -169,7 +171,7 @@ public class TestField {
 
         table.put(1, null);
 
-        PriorityQueue<Integer> integers = new PriorityQueue<>(new Comparator<Integer>(){
+        PriorityQueue<Integer> integers = new PriorityQueue<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return 0;
@@ -180,14 +182,56 @@ public class TestField {
 
     // 测试 ArrayList 的扩容机制
     @Test
-    public void test10(){
+    public void test10() {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
 
     }
 
+    // 测试 Arrays.copyOf()
+    @Test
+    public void test11() {
+        int[] ints = {1, 2, 3, 4, 5};
+        int[] ints1 = Arrays.copyOf(ints, 3);
+        for (int i : ints1) {
+            System.out.println(i);
+        }
+        System.out.println("**********");
 
+        int[] ints2 = Arrays.copyOf(ints, 5);
+        for (int i : ints2) {
+            System.out.println(i);
+        }
+        System.out.println("**********");
 
+        int[] ints3 = Arrays.copyOf(ints, 7);
+        for (int i : ints3) {
+            System.out.println(i);
+        }
+        System.out.println("**********");
+    }
 
+    //测试::操作符
+    @Test
+    public void test12() {
+        List<Integer> list = Arrays.asList(5, 4, 3, 2, 1);
+        list.forEach(System.out::println);
+//        list.forEach()
+    }
+
+    @Test
+    public void test13() {
+//        System.out.println("20.0" < "20.1");
+        compare("", "");
+    }
+
+    public void compare(String s1, String s2){
+        System.out.println((100 / (double)5) == (double)20);
+    }
 }
+
+
+
+
+
