@@ -54,12 +54,36 @@ public class Test54 {
         return res;
     }
 
+    public List<Integer> spiralOrderV2(int[][] matrix) {
+        List<Integer> ans = new ArrayList<>();
+        int di = 0, dj = 1;
+        int i = 0, j = 0;
+        int m = matrix.length, n = matrix[0].length;
+        int length = m * n;
+
+        while(length > 0){
+            ans.add(matrix[i][j]);
+            matrix[i][j] = -200;
+            if(
+                    matrix[(i + di + m) % m][(j + dj + n) % n] == -200
+            ){
+                int tmp = dj;
+                dj = -di;
+                di = tmp;
+            }
+            i += di;
+            j += dj;
+            length--;
+        }
+        return ans;
+    }
+
     @Test
     public void test(){
         int[][] matrix = new int[][]{
                 {1,2,3},{4,5,6},{7,8,9}
         };
-        List<Integer> integers = spiralOrder(matrix);
+        List<Integer> integers = spiralOrderV2(matrix);
         for (Integer integer : integers) {
             System.out.println(integer);
         }

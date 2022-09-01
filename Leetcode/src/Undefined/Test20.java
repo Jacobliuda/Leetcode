@@ -23,10 +23,29 @@ public class Test20 {
         return stack.size() == 0;
     }
 
+    public boolean isValidV2(String s) {
+        char[] array = s.toCharArray();
+        int n = array.length;
+
+        int i = 0;
+        Stack<Character> stack = new Stack<>();
+        while(i < n){
+            char ch = array[i++];
+            if(ch == '(' || ch == '{' || ch == '[')
+                stack.push(ch);
+            else if(!stack.isEmpty()){
+                if((ch == ')' && stack.peek() == '(') || (ch == ']' && stack.peek() == '[') || (ch == '}' && stack.peek() == '{'))  stack.pop();
+                else    return false;
+            }else   return false;
+        }
+        return !stack.isEmpty();
+    }
+
     @Test
     public void test(){
-        String s = ")";
-        boolean valid = isValid(s);
+        String s = "()";
+        boolean valid = isValidV2(s);
         System.out.println(valid);
     }
+
 }
