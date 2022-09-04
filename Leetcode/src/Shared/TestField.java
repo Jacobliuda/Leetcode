@@ -229,6 +229,32 @@ public class TestField {
     public void compare(String s1, String s2){
         System.out.println((100 / (double)5) == (double)20);
     }
+
+    @Test
+    public void test14(){
+        HashSet<String> set = new HashSet<String>(){{
+            for(int i = 0; i < 10000; i+=2000)
+                add("string" + i);
+        }};
+
+        for (String s : set) {
+            System.out.println(s);
+        }
+    }
+
+    @Test
+    public void test15(){
+        ArrayList<Integer> list1 = new ArrayList<>();
+        for(int i = 0; i < 10; i++)
+            list1.add(i);
+        Collections.reverse(list1);
+        for (Integer integer : list1) {
+            System.out.println(integer);
+        }
+
+        System.out.println(Character.isAlphabetic('A'));
+
+    }
 }
 
 

@@ -9,7 +9,7 @@ import java.util.*;
  * @creator 2022/3/19-19:19
  */
 public class Test300 {
-    public int lengthOfLIS(int[] nums) {
+    public int lengthOfLISV2(int[] nums) {
         ArrayList<Integer> dp = new ArrayList<>();
         if(nums.length == 0)    return 0;
         dp.add(nums[0]);
@@ -40,8 +40,31 @@ public class Test300 {
         integers.add(8);
         integers.add(10);
         integers.add(12);
-        System.out.println(Collections.binarySearch(integers, 0));
+        System.out.println(Collections.binarySearch(integers, 14));
+    }
 
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+        int[] dp = new int[n];
+        dp[0] = 1;
+        int maxAns = 1;
 
+        for(int i = 1; i < n; i++){
+            dp[i] = 1;
+            for(int j = 0; j < i; j++){
+                if(nums[j] < nums[i])
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+            }
+            maxAns = Math.max(maxAns, dp[i]);
+        }
+
+        return maxAns;
+    }
+
+    @Test
+    public void test2(){
+        int[] nums = new int[]{10,9,2,5,3,7,101,18};
+        int i = lengthOfLIS(nums);
+        System.out.println(i);
     }
 }
