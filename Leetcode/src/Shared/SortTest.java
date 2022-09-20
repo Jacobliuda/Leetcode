@@ -57,9 +57,9 @@ public class SortTest {
     // 快速排序的测试
     @Test
     public void quickSortTest(){
-        int[] arr = new int[]{2,4,1,0,3,5};
-        quickSort(arr, 0, 5);
-        int[] ints = Arrays.copyOfRange(arr, 0, 3);
+        int[] arr = new int[]{2,2,2,2};
+        quickSort(arr, 0, 3);
+        int[] ints = Arrays.copyOfRange(arr, 0, 4);
         for (int i : ints) {
             System.out.println(i);
         }

@@ -67,4 +67,29 @@ public class Test300 {
         int i = lengthOfLIS(nums);
         System.out.println(i);
     }
+
+    // 判断s1 是否包含 s2
+    public boolean contains(String s1, String s2){
+        HashMap<Character, Integer> map = new HashMap<>();
+        char[] array = s1.toCharArray();
+        for (char c : array) {
+            int d = map.getOrDefault(c, 0);
+            map.put(c, d + 1);
+        }
+
+        array = s2.toCharArray();
+        for (char c : array) {
+            int d = map.getOrDefault(c, -1);
+            if(d < 0)  return false;
+
+            if(d == 1)  map.remove(c);
+            else map.put(c, d-1);
+        }
+        return true;
+    }
+
+    @Test
+    public void test3(){
+        System.out.println(contains("abc", "ac"));
+    }
 }

@@ -25,10 +25,22 @@ public class Test14 {
         return s1.substring(0, idx);
     }
 
+    public String longestCommonPrefix2(String[] strs) {
+        String s = strs[0];
+        for(String string: strs){
+            while(!string.startsWith(s)){
+                if(s.length() == 0) return "";
+                s = s.substring(0, s.length() - 1);
+            }
+        }
+        return s;
+
+    }
+
     @Test
     public void test(){
         String[] strs = new String[]{"flower","flow","flight"};
-        String s = longestCommonPrefix(strs);
+        String s = longestCommonPrefix2(strs);
         System.out.println(s);
     }
     

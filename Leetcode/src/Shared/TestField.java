@@ -253,7 +253,14 @@ public class TestField {
         }
 
         System.out.println(Character.isAlphabetic('A'));
+    }
 
+    @Test
+    public void test16(){
+        byte a = 127;
+        byte b = 127;
+        a+=b;
+        System.out.println((byte)254);
     }
 }
 
