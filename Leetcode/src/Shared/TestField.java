@@ -6,6 +6,7 @@ import sun.reflect.generics.tree.Tree;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.stream.Stream;
 
 /**
  * @author Jacob
@@ -261,6 +262,22 @@ public class TestField {
         byte b = 127;
         a+=b;
         System.out.println((byte)254);
+    }
+
+    @Test
+    public void test17(){
+        // 测试 SortedMap 和 TreeMap
+        SortedMap<Integer, Integer> map = new TreeMap<>();
+        HashSet<Integer> set = new HashSet<>();
+    }
+
+    // 测试 Stream
+    @Test
+    public void test(){
+        List<String> strings = Arrays.asList("hello", "world", "", "helio", "");
+        Stream<String> stream = strings.stream();
+        Stream<String> stringStream = stream.filter(element -> !element.isEmpty());
+        stringStream.forEach(string -> System.out.println(string));
     }
 }
 
